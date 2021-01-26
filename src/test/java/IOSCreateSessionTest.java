@@ -24,16 +24,15 @@ public class IOSCreateSessionTest extends BaseTest {
     @BeforeSuite
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
+/*        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 11");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.2");
-        capabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.nextradiotv.bfmtv");
-/*        capabilities.setCapability(MobileCapabilityType.APP,
+        *//*capabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.nextradiotv.bfmtv");*//*
+        capabilities.setCapability(MobileCapabilityType.APP,
                 "/Users/trichez/Library/Developer/Xcode/DerivedData/NIM-gtuggnmxuvemxlbqqjljcedbhcwj/Build/Products/Debug-iphonesimulator/BFMTV.app");*/
 
         driver = new IOSDriver<MobileElement>(getServiceUrl(), capabilities);
-        /*driver.resetApp();*/
     }
 
     @AfterSuite
