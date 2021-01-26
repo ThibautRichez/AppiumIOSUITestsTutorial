@@ -12,15 +12,15 @@ public abstract class BaseTest {
 
     @BeforeSuite
     public void globalSetup () throws IOException {
-        service = AppiumDriverLocalService.buildDefaultService();
-        service.start();
+/*        service = AppiumDriverLocalService.buildDefaultService();
+        service.start();*/
     }
 
     @AfterSuite
     public void globalTearDown () {
-        if (service != null) {
+/*        if (service != null) {
             service.stop();
-        }
+        }*/
     }
 
     public URL getServiceUrl () throws MalformedURLException {

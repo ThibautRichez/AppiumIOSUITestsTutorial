@@ -2,6 +2,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -26,10 +28,12 @@ public class IOSCreateSessionTest extends BaseTest {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 11");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.2");
-       /* capabilities.setCapability(MobileCapabilityType.APP,
+        capabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.nextradiotv.bfmtv");
+/*        capabilities.setCapability(MobileCapabilityType.APP,
                 "/Users/trichez/Library/Developer/Xcode/DerivedData/NIM-gtuggnmxuvemxlbqqjljcedbhcwj/Build/Products/Debug-iphonesimulator/BFMTV.app");*/
 
         driver = new IOSDriver<MobileElement>(getServiceUrl(), capabilities);
+        /*driver.resetApp();*/
     }
 
     @AfterSuite
@@ -45,7 +49,7 @@ public class IOSCreateSessionTest extends BaseTest {
         Assert.assertEquals(applicationName, "BFMTV");
     }
 
-    @Test
+/*    @Test
     public void testAcceptCMP () {
         IOSElement cmpPopup = (IOSElement) new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("consent_popup_view")));
@@ -55,5 +59,5 @@ public class IOSCreateSessionTest extends BaseTest {
         IOSElement closeInterstitialButton = (IOSElement) new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("Close Advertisement")));
         closeInterstitialButton.click();
-    }
+    }*/
 }
