@@ -13,7 +13,7 @@ import java.util.List;
 
 import static java.util.Collections.emptyList;
 
-public class IOSCreateSessionTest extends BaseTest {
+public class IOSCreateSessionTest2 extends BaseTest2 {
     private IOSDriver<MobileElement> driver;
 
     @BeforeSuite
@@ -24,7 +24,7 @@ public class IOSCreateSessionTest extends BaseTest {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.2");
         capabilities.setCapability(MobileCapabilityType.APP,
-                        "/Users/trichez/Library/Developer/Xcode/DerivedData/NIM-gtuggnmxuvemxlbqqjljcedbhcwj/Build/Products/Debug-iphonesimulator/BFMTV.app");
+                "/Users/trichez/Library/Developer/Xcode/DerivedData/NIM-gtuggnmxuvemxlbqqjljcedbhcwj/Build/Products/Debug-iphonesimulator/BFMTV.app");
 
         driver = new IOSDriver<MobileElement>(getServiceUrl(), capabilities);
     }
