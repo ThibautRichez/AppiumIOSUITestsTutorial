@@ -1,9 +1,12 @@
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -13,7 +16,7 @@ import java.util.List;
 
 import static java.util.Collections.emptyList;
 
-public class IOSCreateSessionTest2 extends BaseTest2 {
+public class IOSCreateSessionTest2 extends BaseTest {
     private IOSDriver<MobileElement> driver;
 
     @BeforeSuite
@@ -42,10 +45,15 @@ public class IOSCreateSessionTest2 extends BaseTest2 {
         Assert.assertEquals(applicationName, "BFMTV");
     }
 
-/*    @Test
+    @Test
     public void testAcceptCMP () {
-        List<MobileElement> buttons = driver.findElementsByClassName("UIButton");
-        System.out.println(buttons);
-        Assert.assertEquals(buttons, emptyList());
-    }*/
+        IOSElement cmpPopup = (IOSElement) new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("consent_popup_view")));
+        IOSElement validateButton = (IOSElement) cmpPopup.findElementByName("Accepter & Fermer");
+        validateButton.click();
+
+        IOSElement closeInterstitialButton = (IOSElement) new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("Close Advertisement")));
+        closeInterstitialButton.click();
+    }
 }

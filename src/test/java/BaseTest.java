@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public abstract class BaseTest2 {
+public abstract class BaseTest {
 
     private static AppiumDriverLocalService service;
 
