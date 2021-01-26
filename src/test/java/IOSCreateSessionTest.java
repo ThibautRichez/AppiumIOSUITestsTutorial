@@ -16,7 +16,7 @@ import java.util.List;
 
 import static java.util.Collections.emptyList;
 
-public class IOSCreateSessionTest2 extends BaseTest {
+public class IOSCreateSessionTest extends BaseTest {
     private IOSDriver<MobileElement> driver;
 
     @BeforeSuite
